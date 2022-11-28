@@ -22,7 +22,7 @@ export default {
     <main>
         <div class="main-container w-75 my-5 m-auto d-flex">
             <div class="row py-4 px-5">
-                <div class="character col-3 p-3 text-center" v-for="character in characters">
+                <div class="character col-xl-3 col-lg-4 col-md-6 p-3 text-center" v-for="character in characters">
                     <img class="w-100" :src=character.img alt="...">
                     <div class="info pt-3">
                         <h4>{{character.name}}</h4>
@@ -51,7 +51,9 @@ h4 {
 }
 
 img {
+    width: 100%;
     height: 250px;
     object-fit: cover;
+    object-position: 50% 0;
 }
 </style>
