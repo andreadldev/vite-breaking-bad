@@ -23,7 +23,7 @@ export default {
         <div class="main-container w-75 my-5 m-auto d-flex">
             <div class="row py-4 px-5">
                 <div class="character col-3 p-3 text-center" v-for="character in characters">
-                    <img src="https://via.placeholder.com/150" alt="...">
+                    <img class="w-100" :src=character.img alt="...">
                     <div class="info pt-3">
                         <h4>{{character.name}}</h4>
                         <h5>{{character.category}}</h5>
@@ -48,5 +48,10 @@ export default {
 
 h4 {
     color: white;
+}
+
+img {
+    height: 250px;
+    object-fit: cover;
 }
 </style>
