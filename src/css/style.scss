@@ -1,1 +1,14 @@
-@import '/node_modules/bootstrap/scss/bootstrap.scss'
+@import '/node_modules/bootstrap/scss/bootstrap.scss';
+
+:root {
+    --background: #2e3a46;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--background);
+}
+
+#app {
+    min-height: 100%;
+}
