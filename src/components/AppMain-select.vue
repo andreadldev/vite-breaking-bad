@@ -11,16 +11,25 @@ export default {
     },
     methods: {
         getCharacters() {
-            if (store.category == "Breaking Bad") {
+            if (this.store.category == "Breaking Bad") {
                 this.store.characters = '';
+                this.store.defaultSelect = false;
                 axios.get("https://www.breakingbadapi.com/api/characters?category=Breaking+Bad").then((resp) => {
                 this.store.characters = resp.data;
                     }
                 );
             }
-            else if (store.category == "Better Call Saul") {
+            else if (this.store.category == "Better Call Saul") {
                 this.store.characters = '';
+                this.store.defaultSelect = false;
                 axios.get("https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul").then((resp) => {
+                this.store.characters = resp.data;
+                    }
+                );
+            }
+            else if (this.store.category == "All" && this.store.defaultSelect == false) {
+                this.store.characters = '';
+                axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
                 this.store.characters = resp.data;
                     }
                 );
@@ -36,6 +45,7 @@ export default {
             <option selected disabled>Select Category</option>
             <option value="Breaking Bad">Breaking Bad</option>
             <option value="Better Call Saul">Better Call Saul</option>
+            <option value="All">All</option>
         </select>
     </div>
 </template>
