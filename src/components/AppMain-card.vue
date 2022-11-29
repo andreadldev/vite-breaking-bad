@@ -1,10 +1,13 @@
 <script>
 import axios from "axios";
+import { store } from '../store.js';
+
 export default {
     name: 'Card',
     data() {
         return {
-            characters: []
+            characters: [],
+            store
         }
     },
     created() {
