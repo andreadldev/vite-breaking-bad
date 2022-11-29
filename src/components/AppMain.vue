@@ -1,18 +1,21 @@
 <script>
-import Card from "./Card.vue";
+import mainCard from "./AppMain-card.vue";
+import mainSelect from  "./AppMain-select.vue";
 export default {
     name: 'AppMain',
     components: {
-        Card
+        mainCard,
+        mainSelect
     }
 }
 </script>
 
 <template>
     <main>
-        <div class="main-container w-75 my-5 m-auto d-flex">
+        <mainSelect/>
+        <div class="main-container w-75 m-auto d-flex">
             <div class="row py-4 px-5">
-                <Card/>
+                <mainCard/>
             </div>
         </div>
     </main>
