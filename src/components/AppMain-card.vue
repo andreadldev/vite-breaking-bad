@@ -6,13 +6,12 @@ export default {
     name: 'Card',
     data() {
         return {
-            characters: [],
             store
         }
     },
     created() {
         axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
-            this.characters = resp.data;
+            this.store.characters = resp.data;
             }
         );
     }
@@ -20,7 +19,7 @@ export default {
 </script>
 
 <template>
-    <div class="character col-xl-3 col-lg-4 col-md-6 p-3 text-center" v-for="character in characters">
+    <div class="character col-xl-3 col-lg-4 col-md-6 p-3 text-center" v-for="character in this.store.characters">
         <img class="w-100" :src=character.img alt="...">
         <div class="info pt-3">
             <h4>{{character.name}}</h4>
